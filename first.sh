@@ -20,4 +20,17 @@ if [[ ${Result} -eq 1 ]];
         tails=$((tails + 1))
         echo $tails
 fi
+if [[ $tails -eq 21 ]]
+then
+	k=`expr $tails - $heads`
+	echo "tail won $k times"
+        exit 0
+fi
+if [[ $heads -eq 21 ]]
+then
+        k=`expr $heads - $tails`
+        echo "heads won $k times"
+        exit 0
+fi
+
 done
